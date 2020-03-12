@@ -1,0 +1,293 @@
+﻿<html>
+
+<head onload="styleCode()">
+    @*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+    <meta name="viewport" content="width =device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+        .chart {
+            width: 100%;
+            min-height: 450px;
+        }
+
+        .list-group-item:active {
+            background-color: #666;
+            color: white;
+            cursor: pointer;
+        }
+
+        #list-group-itemID:hover {
+            background-color: #76CDD8;
+            color: black;
+            cursor: pointer;
+        }
+
+        #list-group-itemID:active {
+            background-color: #666;
+            color: black;
+            cursor: pointer;
+        }
+
+        .input-group.md-form.form-sm.form-1 input {
+            border: 1px solid #bdbdbd;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .input-group.md-form.form-sm.form-2 input {
+            border: 1px solid #bdbdbd;
+            border-top-left-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+            .input-group.md-form.form-sm.form-2 input.red-border {
+                border: 1px solid #ef9a9a;
+            }
+
+            .input-group.md-form.form-sm.form-2 input.lime-border {
+                border: 1px solid #cddc39;
+            }
+
+            .input-group.md-form.form-sm.form-2 input.amber-border {
+                border: 1px solid #ffca28;
+            }
+
+        .sidebar {
+            background-color: black;
+            overflow-y: auto;
+            height: 965px;
+            border: 6px solid silver;
+            text-align: center;
+        }
+
+        .search {
+            margin-left: 10px;
+            margin-top: 30px;
+        }
+
+        .main {
+            background-color: white;
+          
+        }
+         .text h4 {
+            margin-top: 110px;
+            margin-right: -126px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .open-more {
+            left: 0px !important;
+            -moz-transition-duration: 2s;
+            -moz-transition-duration: 1s;
+            -webkit-transition-duration: 1s;
+        }
+
+            .open-more i {
+                transform: rotate(180deg);
+                background: rgba(73,161,73,0.7);
+            }
+
+        .text {
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .box {
+            position: fixed;
+            z-index: 800;
+            left: -350px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 900px !important;
+            background: black;
+            box-shadow: 0px 0px 4px 0px #444444;
+            cursor: pointer;
+        }
+
+            .box a {
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+            }
+
+        .icon {
+            position: absolute;
+            top: 45%;
+            right: -34px;
+            padding: 10px;
+            background-color: #79B479;
+            color: #fff;
+            border-radius: 0px 20px 20px 0px;
+        }
+        .button {
+            -moz-transform: rotate(-180deg);
+            border-radius: 20px 0px 0px 20px;
+        }
+         @@media screen and (max-width: 792px) {
+            .box {
+                left: -92%;
+                width: 92%;
+                height: 100%;
+            }
+
+ 
+
+            #content-page {
+                width: 120%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body onload="PrintEvents()">
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box">
+                    <div class="sidebar-sticky sidebar" id="abc" >
+                        <nav>
+                           
+                            <div></div>
+
+                            <br>
+                            <form role="search" class="bd-search d-flex align-items-center search" >
+                                <span class="algolia-autocomplete algolia-autocomplete-left" style="position: relative; display: inline-block; direction: ltr;"><input type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-docs-version="4.4" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, BlinkMacSystemFont, &quot; Segoe UI&quot;, Roboto, &quot; Helvetica Neue&quot;, Arial, &quot; Noto Sans&quot;, sans-serif, &quot; Apple Color Emoji&quot;, &quot; Segoe UI Emoji&quot;, &quot; Segoe UI Symbol&quot;, &quot; Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;">f</pre><span class="ds-dropdown-menu ds-with-1" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; left: 0px; right: auto; display: none;"><div class="ds-dataset-1"></div></span></span>
+                               
+                            </form>
+                            <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span style="color:white"><b>Past Events</b></span>
+                            </h5>
+
+                            <div id="list">
+
+                            </div>
+                            <i class="fa fa-arrow-right icon" aria-hidden="true"></i>
+                         
+       
+
+                        </nav>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-9 main" name="framename">
+                    <div id="piechart_3d" class="chart pie"></div>
+                    <div id="chart_div" class="chart"></div>
+                </div>
+            </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        function PrintEvents() {
+            var x = document.createElement("UL");
+            x.setAttribute("id", "myUL");
+            x.setAttribute("class", "nav nav-link flex-column list-group-flush");
+            
+            document.getElementById("list").appendChild(x);
+            var a = ["Event1", "Event2", "Event3"];
+            for (i = 0, u = 0; i <= 2; i++ , u++) {
+
+                var y = document.createElement("li");
+                var u = 23;
+                if (i == 0)
+                    y.setAttribute("onclick", `showInChart(10,80,this)`);
+                if (i == 1)
+                    y.setAttribute("onclick", `showInChart(40,20,this)`);
+                if (i == 2)
+                    y.setAttribute("onclick", `showInChart(20,80,this)`);
+                var t = document.createTextNode(a[i]);
+                y.setAttribute("class", "list-group-item");
+
+
+
+                y.setAttribute("id", 'list-group-itemID');
+               
+                y.setAttribute("name", a[i]);
+                y.appendChild(t);
+                document.getElementById("myUL").appendChild(y);
+            }
+            
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.box').toggleClass("open-more");
+            $(".icon").click(function () {
+                $('.box').toggleClass("open-more");
+                $(this).toggleClass("button");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function showInChart(i, j, ctrl) {
+
+            var list = document.getElementById("myUL").getElementsByTagName('li');
+
+            for (p = 0; p < list.length; p++) {
+                list[p].style.background = 'white';
+            }
+
+            ctrl.style.background = '#76CDD8';
+
+           
+
+
+            google.charts.load("current", {
+                packages: ["corechart"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Registered Students', 'Attended Students'],
+                    [' Registered', i],
+                    [' Attended', j],
+                ]);
+                var options = {
+                    title: 'Event Details',
+                    is3D: true,
+                };
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart.draw(data, options);
+                var data1 = google.visualization.arrayToDataTable([
+                    ['Registered Students', 'Attended Students'],
+                    [' Event1', 0.2],
+                    [' Event2', 0.6],
+                    [' Event3', 0.3],
+                ]);
+                var options1 = {
+                    title: 'Each Event-Student Comparison',
+                    legend: {
+                        position: 'none'
+                    },
+                };
+                var chart1 = new google.visualization.Histogram(document.getElementById('chart_div'));
+                chart1.draw(data1, options1);
+            }
+        }
+    </script>
+</body>
+
+
+
+</html>
